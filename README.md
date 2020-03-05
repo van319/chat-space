@@ -38,9 +38,7 @@ has_many :message
 
 
 ## massegeテーブル
-
 |Column|Type|Options|
-
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |body|text||
@@ -60,10 +58,8 @@ has_many :users, through: groups_users
 belongs_to :users
 
 
-
 ## groups_usersテーブル
 |Column|Type|Options|
-
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
