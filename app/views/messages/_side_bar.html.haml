@@ -1,0 +1,27 @@
+.side-bar
+  .side-head
+    .side-head__box
+      %p.side-head__box__name name
+
+      %ul.side-box__menu
+        %li.side-box__menu__new
+        = link_to "#" do
+          = icon('fa', 'edit')
+        %span<>
+   
+      
+        %li.side-box__menu__edit
+        = link_to "#" do
+          = icon('fa', 'cog')
+        %span<>
+  .groups
+    = link_to "#" , class: "group" do
+      %p.group_name 
+        シンデレラ＠貧乏からの脱却
+      %p.group_message 
+        まだメッセージがありません
+
+      %p.group_name 
+        白雪姫＠毒林檎の見抜き方
+      %p.group_message 
+        まだメッセージがありません
