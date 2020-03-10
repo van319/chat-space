@@ -6,7 +6,7 @@
 
       %ul.side-box__menu
         %li.side-box__menu__new
-        = link_to "#" do
+        = link_to 'groups/new' do
           = icon('fa', 'edit', class: 'icon')
         %span<>
    
@@ -16,13 +16,10 @@
           = icon('fa', 'cog', class: 'icon')
         %span<>
   .groups
-    = link_to "#" , class: "group" do
-      %p.group_name 
-        シンデレラ＠貧乏からの脱却
-      %p.group_message 
-        まだメッセージがありません
-
-      %p.group_name 
-        白雪姫＠毒林檎の見抜き方
-      %p.group_message 
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to 'group/edit' , class: "group" do
+          .group_name
+            = group.name
+          .group_message
+            メッセージはまだありません。
