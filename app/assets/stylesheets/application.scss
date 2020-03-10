@@ -1,4 +1,7 @@
-@import "reset"; //resetを読み込んでいる
-@import "modules/messages"; //modules/messages"を読み込んでいる
-@import "font-awesome-sprockets";//FontAwesomeを入れることで文字同様にアイコンを表示させる
+@import "reset";
+@import "config/colors";
+@import "modules/messages";
+@import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
+@import "modules/flash";
