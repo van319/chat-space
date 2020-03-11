@@ -56,6 +56,7 @@
     .group{
       text-decoration: none;
       color:#fff;
+
       .group_name{
         margin-bottom:5px;
         font-size: 15px;
@@ -63,6 +64,10 @@
       .group_message{
         font-size: 11px;
         margin-bottom:40px;
+      }
+      a {
+        text-decoration: none;
+      color:#fff;
       }
     }
   }
@@ -109,8 +114,6 @@ float: right;
         }
       }
     
-
-
       .main__head__edit-btn{
         height: 40px;
         line-height: 40px;
@@ -121,40 +124,37 @@ float: right;
        a {
         text-decoration: none;
         color: #38aef3;
-         }
+        }
       }
-     
-  
 }
 
-  .massages{
-  background-color: #ffffff;
-  height: calc(100vh - 100px - 90px);
-  width: calc(100vw - 300px );
-  padding:35px 40px;
-  }
-  .massage{
-    padding-bottom: 46px;
-    &__upper__info{
-      display:flex;
-      margin-bottom: 12px;
-      &__name{
-        color: #333333;
-        font-size: 16px;
-      }
-      &__date{
-        color: #999999;
-        font-size: 12px;
-        padding-left: 10px;
-      }
+  .messages{
+    background-color: #ffffff;
+    height: calc(100vh - 100px - 90px);
+    width: calc(100vw - 300px );
+    padding:35px 40px;
     }
-    &__text{
-      color: #434A54;
-      font-size: 14px;
-      margin-bottom: 10px;
+    .message{
+      padding-bottom: 46px;
+      .message-upper__info{
+        display:flex;
+        margin-bottom: 12px;
 
+        .massage__upper__info__name{
+          color: #333333;
+          font-size: 16px;
+        }
+        .massage__upper__info__date{
+          color: #999999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-    
+      .message-text{
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
   }
   
   .form {
@@ -164,54 +164,53 @@ float: right;
     display: flex;
     align-items: center;
 
-    .form__massage{
+    .new_message{
       height:50px;
-      width:100%;
+      width: 100%;
       display:flex;
-      
-      
-      &__input{
-        background-color: #fffffff;
-        height:50px;
+      justify-content: space-between;
+
+      .form__box {
         width:100%;
-        display:flex;
-        position:relative;
+        background-color: #ffffff;
+        display:flex; 
         justify-content: space-between;
+        position: relative;
 
-        .input-box{
-          background-color: #ffffff;
-          height:50px;
+        .form__message{
           width:100%;
-          line-height: 50px;
-          padding-left:10px;
+          height:50px;
+          border-style: none;
+          padding-left: 10px;
+          padding-right: 40px;
+
+
         }
-        .icon{
-          position: absolute;
-          font-size: 20px;
-          right:10px;
+          .form__mask__image{
+            position: absolute ;
+            right :0;
 
-          .input-box__image{
-            display:none;
-          }
-
-          i{
             line-height: 50px;
-           }
+            text-align: right;
+            .icon{
+              font-size: 20px;
+              margin:10px;
+            }
+            .hidden{
+              display:none;
+            }
+          }
         }
       }
-      &__submit-btn{
-        background-color: #38aef3;
-        height: 50px;
-        margin:0 0 0 15px;
-        padding:0 30px;
-
-        a {
-          color: #ffffff;
-          text-decoration: none;
-          line-height: 50px;
-        }
-      }
+    .form__submit{
+      background-color: #38aef3;
+      height: 50px;
+      margin:0 0 0 15px;
+      padding:0 30px;
+      color: #ffffff;
+      text-decoration: none;
+      line-height: 50px;
+    }
    }
-  }
  }
 }

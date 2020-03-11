@@ -3,49 +3,26 @@
     .chat-main__header__main
       .leftbox
         %h2.group-about
-          グループ概要
+          = @group.name
         %ul.member-list
           menber:
           %li
-          = link_to "#", class: "member-name" do
-            シンデレラ
-          %li
-          = link_to "#", class: "member-name" do
-            白雪姫
+            - @group.users.each do |user|
+              = user.name
+
 
       .main__head__edit-btn
-        = link_to "#" do
+        = link_to edit_group_path(@group) do
           Edit
 
-
-  .massages
-    .massage
-      .massage__upper__info
-        %p.massage__upper__info__name
-          シンデレラ
-        %p.massage__upper__info__date
-          2020/3/9(mon) 10:10:10
-
-      %p.massage__text
-        毒とか勘弁
-
-    .massage
-      .massage__upper__info
-        %p.massage__upper__info__name
-          白雪姫
-        %p.massage__upper__info__date
-          2020/3/9(mon) 12:12:12
-
-      %p.massage__text
-        ウケる 盛られるとまじつらみ
-
+  .messages
+    = render @messages
+    
   .form
-    .form__massage
-      .form__massage__input 
-        %input{type: "text", class: "input-box", placeholder: "type a massage"}
-        %label.icon
-          = icon('fas', 'image')
-          %input{type: "file" , class: 'input-box__image' }
-      .form__massage__submit-btn
-        = link_to "#" do
-          Send
+    = form_for [@group, @message] do |f|
+      .form__box
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
