@@ -6,20 +6,20 @@
 
       %ul.side-box__menu
         %li.side-box__menu__new
-        = link_to 'groups/new' do
+        = link_to new_group_path do
           = icon('fa', 'edit', class: 'icon')
         %span<>
-   
-      
+
         %li.side-box__menu__edit
         = link_to edit_user_path(current_user) do
           = icon('fa', 'cog', class: 'icon')
         %span<>
+        
   .groups
     - current_user.groups.each do |group|
       .group
-        = link_to 'group/edit' , class: "group" do
+        = link_to group_messages_path(group) do
           .group_name
             = group.name
           .group_message
-            メッセージはまだありません。
+            = group.show_last_message
