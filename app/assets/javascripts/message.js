@@ -55,6 +55,7 @@ $('#new_message').on('submit', function(e){
     var html = buildHTML(data);
     $('.messages').append(html);      
     $('form')[0].reset();
+    $('.form__submit').prop('disabled', false );
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
   })
 
